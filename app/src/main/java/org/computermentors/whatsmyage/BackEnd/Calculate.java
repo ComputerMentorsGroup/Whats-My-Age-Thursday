@@ -9,11 +9,17 @@ import java.util.Date;
  */
 public class Calculate {
 
-    Date getDate (DatePicker date){
+    // Returns the date entered in to the datepicker
+    public Date getDate (DatePicker datePicker){
+        Date date = new Date();
 
+        return date;
     }
 
-    int getAge (Date date){
+    // Returns the age of the user in years
+    public int getAge (Date date){
+        int age = 0;
 
+        return age;
     }
 }

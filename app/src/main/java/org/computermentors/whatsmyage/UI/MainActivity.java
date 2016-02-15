@@ -1,7 +1,9 @@
 package org.computermentors.whatsmyage.UI;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 
@@ -20,6 +22,18 @@ public class MainActivity extends AppCompatActivity {
         final DatePicker birthDatePicker = (DatePicker) findViewById(R.id.birthDatePicker);
         final Button findAgeButton = (Button) findViewById(R.id.findAgeButton);
 
+        // Activates the findAGeButton to retrieve the users age...
+        findAgeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+    }
+
+    private void startAgeActivity(int year){
+        Intent intent = new Intent(this, AgeActivity.class);
+        startActivity(intent);
     }
 
 }
