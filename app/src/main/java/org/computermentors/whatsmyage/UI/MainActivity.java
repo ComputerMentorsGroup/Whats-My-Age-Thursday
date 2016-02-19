@@ -10,6 +10,8 @@ import android.widget.DatePicker;
 import org.computermentors.whatsmyage.BackEnd.Calculate;
 import org.computermentors.whatsmyage.R;
 
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
 
     private Calculate mCalculate = new Calculate();
@@ -25,14 +27,21 @@ public class MainActivity extends AppCompatActivity {
         findAgeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startAgeActivity();
+
+                Date date = mCalculate.getDate(birthDatePicker);
+
+                int age = mCalculate.getAge(date);
+
+
+                startAgeActivity(age);
             }
         });
 
     }
 
-    private void startAgeActivity(){
-        Intent intent=new Intent(this,AgeActivity.class);
+    private void startAgeActivity(int age){
+        Intent intent = new Intent(this,AgeActivity.class);
+        intent.putExtra("age",age);
         startActivity(intent);
     }
 }
