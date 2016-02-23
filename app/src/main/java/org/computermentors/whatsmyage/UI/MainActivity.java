@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         final DatePicker birthDatePicker = (DatePicker) findViewById(R.id.birthDatePicker);
         final Button findAgeButton = (Button) findViewById(R.id.findAgeButton);
 
+<<<<<<< HEAD
         findAgeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,6 +44,20 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("age", age);
         startActivity(intent);
         Toast.makeText(this, "" + age, Toast.LENGTH_LONG).show();
+=======
+        // Activates the findAGeButton to retrieve the users age...
+        findAgeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+    }
+
+    private void startAgeActivity(int year){
+        Intent intent = new Intent(this, AgeActivity.class);
+        startActivity(intent);
+>>>>>>> origin/master
     }
 
 }

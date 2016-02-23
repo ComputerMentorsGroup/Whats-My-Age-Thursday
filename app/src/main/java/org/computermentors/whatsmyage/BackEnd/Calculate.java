@@ -29,6 +29,19 @@ public class Calculate {
             age--;
         }
 
+=======
+    // Returns the date entered in to the datepicker
+    public Date getDate (DatePicker datePicker){
+        Date date = new Date();
+
+        return date;
+    }
+
+    // Returns the age of the user in years
+    public int getAge (Date date){
+        int age = 0;
+
+>>>>>>> origin/master
         return age;
     }
 }

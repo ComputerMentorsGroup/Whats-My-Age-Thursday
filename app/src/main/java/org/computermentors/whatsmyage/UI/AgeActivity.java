@@ -19,6 +19,7 @@ public class AgeActivity extends AppCompatActivity {
         final TextView ageTextView = (TextView) findViewById(R.id.ageTextView);
         final Button backButton = (Button) findViewById(R.id.backButton);
 
+<<<<<<< HEAD
         Intent intent = getIntent();
         int age = intent.getIntExtra("age", 0);
 
@@ -36,6 +37,18 @@ public class AgeActivity extends AppCompatActivity {
 
     private void startMainActivity (){
 
+=======
+        // Returns to the MainActivity
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startMainActivity();
+            }
+        });
+    }
+
+    private void startMainActivity(){
+>>>>>>> origin/master
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
