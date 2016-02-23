@@ -2,6 +2,7 @@ package org.computermentors.whatsmyage.BackEnd;
 
 import android.widget.DatePicker;
 
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -9,11 +10,25 @@ import java.util.Date;
  */
 public class Calculate {
 
-    Date getDate (DatePicker date){
+    public Date getDate (DatePicker date){
+        Date newDate = new Date(date.getYear() - 1900, date.getMonth(), date.getDayOfMonth());
 
+        return newDate;
     }
 
-    int getAge (Date date){
+    public int getAge (Date date){
 
+        Calendar dob = Calendar.getInstance();
+        dob.setTime(date);
+        Calendar today = Calendar.getInstance();
+        int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR);
+        if (today.get(Calendar.MONTH) < dob.get(Calendar.MONTH)) {
+            age--;
+        } else if (today.get(Calendar.MONTH) == dob.get(Calendar.MONTH)
+                && today.get(Calendar.DAY_OF_MONTH) < dob.get(Calendar.DAY_OF_MONTH)) {
+            age--;
+        }
+
+        return age;
     }
 }
